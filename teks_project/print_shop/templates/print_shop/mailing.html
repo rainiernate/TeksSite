@@ -1,0 +1,249 @@
+{% extends 'print_shop/base.html' %}
+{% load static %}
+
+{% block title %}Mailing Services - TEKS Services{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">Direct Mail Services</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:home' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Mailing</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mailing Services Intro -->
+<section class="services-intro py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Professional Direct Mail Services</h2>
+                <p class="lead mb-4">Save time and money advertising with our direct mail services. We can help you with lists, addressing, inserting, tabbing, variable data, and more.</p>
+                <p>At TEKS Services, we handle all aspects of your direct mail campaign from start to finish. Our comprehensive approach ensures your message reaches the right audience at the right time, maximizing your marketing ROI.</p>
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-primary mt-3">Request a Quote</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mailing Services" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mailing Services List -->
+<section class="services-list py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Our Mailing Services</h2>
+                <p class="section-subtitle">Comprehensive direct mail solutions</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% if services %}
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        {% if service.image %}
+                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h3 class="card-title h4">{{ service.title }}</h3>
+                            <p class="card-text">{{ service.description|truncatewords:25 }}</p>
+                            <a href="{% url 'print_shop:service_detail' service.slug %}" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default services if none in database -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-envelope-open-text fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Direct Mail Services</h3>
+                            <p class="card-text">Complete direct mail services including design, printing, addressing, and mailing. We handle everything from start to finish.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-list-ul fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Mailing Lists</h3>
+                            <p class="card-text">Do you need targeted mailing lists with special criteria or simple carrier route information? No matter the type of list, we have it for you.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-file-invoice fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Statement Processing</h3>
+                            <p class="card-text">Do you have statements, bills or letters that need to be sent to your customers / clients. We will handle your statement processing (printing and mailing).</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-envelope fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">EDDM (Every Door Direct Mail)</h3>
+                            <p class="card-text">Reach every household on a mail carrier's route without the need for addresses. Perfect for local businesses targeting specific neighborhoods.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-barcode fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Full Service Barcode</h3>
+                            <p class="card-text">Our Full Service Intelligent Mail Barcode services ensure your mail is processed efficiently and qualifies for postal discounts.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-hospital fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Medical Practice Marketing</h3>
+                            <p class="card-text">Stay in contact with your clients and potential clients with custom designed print and direct mail for medical practices.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Mailing Process -->
+<section class="mailing-process py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Our Direct Mail Process</h2>
+                <p class="section-subtitle">How we deliver results for your campaign</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <span class="h4 mb-0">1</span>
+                        </div>
+                    </div>
+                    <h3 class="h5">Strategy & Planning</h3>
+                    <p>We work with you to define your target audience, messaging, and campaign goals.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <span class="h4 mb-0">2</span>
+                        </div>
+                    </div>
+                    <h3 class="h5">Design & Production</h3>
+                    <p>Our team designs and produces high-quality mail pieces that capture attention.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <span class="h4 mb-0">3</span>
+                        </div>
+                    </div>
+                    <h3 class="h5">List Management</h3>
+                    <p>We prepare and process your mailing list for optimal deliverability and postal discounts.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="process-step text-center">
+                    <div class="process-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <span class="h4 mb-0">4</span>
+                        </div>
+                    </div>
+                    <h3 class="h5">Mailing & Tracking</h3>
+                    <p>We handle the mailing process and provide tracking information for your campaign.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Self Mailers & Tabbing Rules -->
+<section class="tabbing-rules py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Self Mailers & Tabbing Rules</h2>
+                <p>The USPS has specific requirements for self-mailers to ensure they can be processed through automated equipment. Our team is well-versed in these regulations and will ensure your mailers comply with all postal requirements.</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent">Proper tab placement based on mailer size and weight</li>
+                    <li class="list-group-item bg-transparent">Correct paper weight selection for different mail types</li>
+                    <li class="list-group-item bg-transparent">Address placement and formatting according to USPS guidelines</li>
+                    <li class="list-group-item bg-transparent">Barcode requirements for automation discounts</li>
+                </ul>
+                <a href="{% url 'print_shop:blog' %}" class="btn btn-outline-primary mt-4">Read More on Our Blog</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Self Mailers & Tabbing Rules" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="mb-2">Ready to start your direct mail campaign?</h2>
+                <p class="lead mb-0">Contact us today for a free quote and consultation.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-light btn-lg">Get a Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

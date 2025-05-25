@@ -1,0 +1,219 @@
+{% extends 'print_shop/base.html' %}
+{% load static %}
+
+{% block title %}Printing Services - TEKS Services{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">Print Services</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:home' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Printing</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Printing Services Intro -->
+<section class="services-intro py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Professional Print Services</h2>
+                <p class="lead mb-4">Advertise through print. Our print services include variable data, digital, brochures, stationary, banners, signs, and more.</p>
+                <p>At TEKS Services, we offer a comprehensive range of printing solutions to meet all your business needs. From business cards and brochures to large format banners and signs, our state-of-the-art printing technology ensures high-quality results every time.</p>
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-primary mt-3">Request a Quote</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Printing Services" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Printing Services List -->
+<section class="services-list py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Our Printing Services</h2>
+                <p class="section-subtitle">High-quality printing solutions for all your needs</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% if services %}
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        {% if service.image %}
+                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h3 class="card-title h4">{{ service.title }}</h3>
+                            <p class="card-text">{{ service.description|truncatewords:25 }}</p>
+                            <a href="{% url 'print_shop:service_detail' service.slug %}" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default services if none in database -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-print fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Digital Printing</h3>
+                            <p class="card-text">High-quality digital printing for short to medium runs. Perfect for brochures, flyers, business cards, and more.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-database fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Variable Data Printing</h3>
+                            <p class="card-text">Personalize your marketing with variable data printing. We print mail merge data and variable graphics to get your customer's attention.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-sign fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Signage</h3>
+                            <p class="card-text">Custom printed signs to help you advertise your business. Including Flags, A-Frames, Banners and more.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-mail-bulk fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Postcards / Flyers / Newsletters</h3>
+                            <p class="card-text">Advertise to current and potential clients with postcards, flyers and newsletters. We have high quality postcard and flyer packages that will fit your budget.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-file-alt fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Brochures & Catalogs</h3>
+                            <p class="card-text">Professional brochures and catalogs to showcase your products and services. Available in various sizes and paper types.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-id-card fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Business Cards & Stationery</h3>
+                            <p class="card-text">Make a lasting impression with professional business cards, letterheads, and envelopes. Custom designs available.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Why Choose TEKS Services?</h2>
+                <p class="section-subtitle">Experience the TEKS difference</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-award fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5">Quality Guaranteed</h3>
+                    <p>We stand behind our work with a 100% satisfaction guarantee.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-truck fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5">Fast Turnaround</h3>
+                    <p>Quick turnaround times to meet your deadlines.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-dollar-sign fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5">Competitive Pricing</h3>
+                    <p>High-quality printing at affordable prices.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="feature-box text-center">
+                    <div class="feature-icon mb-3">
+                        <i class="fas fa-headset fa-3x text-primary"></i>
+                    </div>
+                    <h3 class="h5">Expert Support</h3>
+                    <p>Our team of experts is here to help with your project.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="mb-2">Ready to start your printing project?</h2>
+                <p class="lead mb-0">Contact us today for a free quote and consultation.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-light btn-lg">Get a Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

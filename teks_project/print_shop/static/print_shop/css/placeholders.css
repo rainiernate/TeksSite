@@ -1,0 +1,58 @@
+/* Placeholder styles for missing images */
+.placeholder-img {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 1.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.placeholder-img-hero {
+    height: 400px;
+}
+
+.placeholder-img-service {
+    height: 250px;
+}
+
+.placeholder-img-portfolio {
+    height: 200px;
+}
+
+.placeholder-img-blog {
+    height: 220px;
+}
+
+.placeholder-img-testimonial {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.placeholder-img i {
+    font-size: 3rem;
+}
+
+/* Color variations */
+.placeholder-img-primary {
+    background-color: #e6f2ff;
+    color: #0056b3;
+}
+
+.placeholder-img-secondary {
+    background-color: #f0f0f0;
+    color: #6c757d;
+}
+
+.placeholder-img-success {
+    background-color: #e6f7e6;
+    color: #28a745;
+}
+
+.placeholder-img-info {
+    background-color: #e6f9ff;
+    color: #17a2b8;
+}

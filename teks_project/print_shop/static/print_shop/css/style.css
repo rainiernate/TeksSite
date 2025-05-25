@@ -1,0 +1,250 @@
+/* 
+ * TEKS Services - Custom CSS Styles
+ * Created for TEKS Services Print Shop Website
+ */
+
+/* Global Styles */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #003d7a;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+/* Header Styles */
+.top-bar {
+    font-size: 0.9rem;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.logo-img {
+    max-height: 80px;
+    width: auto;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo-img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    padding: 0.75rem 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 0;
+}
+
+/* Service Cards */
+.service-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    color: var(--primary-color);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.testimonial-quote {
+    color: var(--primary-color);
+}
+
+.testimonial-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.testimonial-placeholder {
+    width: 50px;
+    height: 50px;
+}
+
+/* Blog Cards */
+.blog-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.blog-placeholder {
+    height: 200px;
+}
+
+/* Portfolio Styles */
+.portfolio-filter-buttons .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-item {
+    transition: all 0.3s ease;
+}
+
+.portfolio-item .card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.portfolio-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Process Steps */
+.process-step .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Feature Boxes */
+.feature-box {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    height: 100%;
+}
+
+/* Contact Form */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 86, 179, 0.25);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        max-height: 50px;
+    }
+    
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .top-bar {
+        text-align: center;
+    }
+    
+    .top-bar .text-md-end {
+        text-align: center !important;
+        margin-top: 0.5rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

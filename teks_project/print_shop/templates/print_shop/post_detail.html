@@ -1,0 +1,176 @@
+{% extends 'print_shop/base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }} - TEKS Services{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">{{ post.title }}</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:blog' %}">Blog</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ post.title }}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Post Content -->
+<section class="blog-post-content py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <article class="blog-post">
+                    {% if post.image %}
+                        <img src="{{ post.image }}" class="img-fluid rounded mb-4" alt="{{ post.title }}">
+                    {% endif %}
+                    
+                    <div class="post-meta mb-4">
+                        <span class="text-muted">
+                            <i class="far fa-calendar-alt me-1"></i> {{ post.published_date|date:"F d, Y" }}
+                        </span>
+                    </div>
+                    
+                    <div class="post-content">
+                        {{ post.content|safe|linebreaks }}
+                    </div>
+                    
+                    <div class="post-tags mt-4">
+                        <span class="text-muted me-2"><i class="fas fa-tags"></i> Tags:</span>
+                        <a href="#" class="badge bg-light text-dark me-1">Printing</a>
+                        <a href="#" class="badge bg-light text-dark me-1">Marketing</a>
+                        <a href="#" class="badge bg-light text-dark">Business</a>
+                    </div>
+                    
+                    <hr class="my-5">
+                    
+                    <!-- Post Navigation -->
+                    <div class="post-navigation d-flex justify-content-between">
+                        <a href="#" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i> Previous Post</a>
+                        <a href="#" class="btn btn-outline-primary">Next Post <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Search Widget -->
+                <div class="card mb-4">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <form method="get" action="{% url 'print_shop:blog' %}">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Search for...">
+                                <button class="btn btn-primary" type="submit">Go!</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Categories Widget -->
+                <div class="card mb-4">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#">Printing</a></li>
+                                    <li><a href="#">Direct Mail</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">Business Tips</a></li>
+                                    <li><a href="#">Events</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Posts Widget -->
+                <div class="card mb-4">
+                    <div class="card-header">Recent Posts</div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#">Things we print</a></li>
+                            <li class="mb-2"><a href="#">Table-Top Banners with an X-Frame</a></li>
+                            <li class="mb-2"><a href="#">Self Mailers & Tabbing Rules</a></li>
+                            <li class="mb-2"><a href="#">What is Direct Mail and Why is it Important?</a></li>
+                            <li><a href="#">Wedding Announcements</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Widget -->
+                <div class="card mb-4">
+                    <div class="card-header">Contact Us</div>
+                    <div class="card-body">
+                        <p>Have questions about our services? Contact us for a free quote and consultation.</p>
+                        <a href="{% url 'print_shop:contact' %}" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Posts -->
+<section class="related-posts py-5 bg-light">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="h3">Related Posts</h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Self Mailers">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Self Mailers & Tabbing Rules</h3>
+                        <p class="text-muted small">November 2, 2020</p>
+                        <p class="card-text">The USPS has specific requirements for self-mailers...</p>
+                        <a href="{% url 'print_shop:post_detail_by_id' 3 %}" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Direct Mail">
+                    <div class="card-body">
+                        <h3 class="card-title h5">What is Direct Mail and Why is it Important?</h3>
+                        <p class="text-muted small">October 30, 2020</p>
+                        <p class="card-text">Direct mail remains one of the most effective marketing channels...</p>
+                        <a href="{% url 'print_shop:post_detail_by_id' 4 %}" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Wedding Announcements">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Wedding Announcements</h3>
+                        <p class="text-muted small">April 21, 2019</p>
+                        <p class="card-text">Your wedding announcement is an important part of your special day...</p>
+                        <a href="{% url 'print_shop:post_detail_by_id' 5 %}" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

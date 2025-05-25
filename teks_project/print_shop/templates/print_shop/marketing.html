@@ -1,0 +1,250 @@
+{% extends 'print_shop/base.html' %}
+{% load static %}
+
+{% block title %}Marketing Services - TEKS Services{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">Marketing Services</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:home' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Marketing</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Marketing Services Intro -->
+<section class="services-intro py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Effective Marketing Solutions</h2>
+                <p class="lead mb-4">Boost your business with our comprehensive marketing services. We combine print, direct mail, and personalized campaigns to help you reach your target audience effectively.</p>
+                <p>At TEKS Services, we understand that effective marketing requires a strategic approach. Our team works with you to develop customized marketing solutions that align with your business goals and budget.</p>
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-primary mt-3">Request a Quote</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Marketing Services" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Marketing Services List -->
+<section class="services-list py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Our Marketing Services</h2>
+                <p class="section-subtitle">Comprehensive solutions to grow your business</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% if services %}
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        {% if service.image %}
+                        <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.title }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h3 class="card-title h4">{{ service.title }}</h3>
+                            <p class="card-text">{{ service.description|truncatewords:25 }}</p>
+                            <a href="{% url 'print_shop:service_detail' service.slug %}" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <!-- Default services if none in database -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-bullseye fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Targeted Direct Mail Campaigns</h3>
+                            <p class="card-text">Reach your ideal customers with targeted direct mail campaigns. We help you identify your audience, create compelling messages, and track results.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-user-edit fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Variable Data Marketing</h3>
+                            <p class="card-text">Personalize your marketing with variable data printing. We print mail merge data and variable graphics to get your customer's attention and increase response rates.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-hospital fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Medical Practice Marketing</h3>
+                            <p class="card-text">Stay in contact with your clients and potential clients with custom designed print and direct mail for medical practices.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-store fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">New Mover Marketing</h3>
+                            <p class="card-text">Target new residents in your area with special offers and welcome packages. Perfect for retail, restaurants, and service businesses.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-gift fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Invitations & Announcements</h3>
+                            <p class="card-text">Do you have a special event planned? Let us handle the printing and mailing of your announcements and invitations so you can focus on the big event!</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 service-card">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-chart-line fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title h4">Campaign Analytics</h3>
+                            <p class="card-text">Track the performance of your marketing campaigns with our analytics services. Understand what works and optimize future campaigns.</p>
+                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Marketing Strategy -->
+<section class="marketing-strategy py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Our Marketing Approach</h2>
+                <p class="section-subtitle">Strategic solutions for measurable results</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="strategy-step text-center">
+                    <div class="strategy-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5">Audience Analysis</h3>
+                    <p>We identify your target audience and understand their needs and preferences.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="strategy-step text-center">
+                    <div class="strategy-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5">Creative Development</h3>
+                    <p>Our creative team designs compelling marketing materials that capture attention.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="strategy-step text-center">
+                    <div class="strategy-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5">Campaign Execution</h3>
+                    <p>We handle all aspects of campaign execution, from printing to mailing.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="strategy-step text-center">
+                    <div class="strategy-icon mb-3">
+                        <div class="icon-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                    </div>
+                    <h3 class="h5">Results Analysis</h3>
+                    <p>We track campaign performance and provide insights for future optimization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Variable Data Marketing -->
+<section class="variable-data py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="mb-4">Variable Data Marketing</h2>
+                <p>Personalization is key to effective marketing. Our variable data printing services allow you to customize each piece with the recipient's name, personalized offers, and even variable images.</p>
+                <p>Benefits of variable data marketing include:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-transparent">Higher response rates compared to generic mailings</li>
+                    <li class="list-group-item bg-transparent">Improved customer engagement through personalization</li>
+                    <li class="list-group-item bg-transparent">Ability to segment your audience for targeted messaging</li>
+                    <li class="list-group-item bg-transparent">Tracking and analytics to measure campaign effectiveness</li>
+                </ul>
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-outline-primary mt-4">Learn How We Can Help</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Variable Data Marketing" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="mb-2">Ready to boost your marketing efforts?</h2>
+                <p class="lead mb-0">Contact us today for a free marketing consultation.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-light btn-lg">Get a Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

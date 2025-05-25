@@ -1,0 +1,297 @@
+{% extends 'print_shop/base.html' %}
+{% load static %}
+
+{% block title %}Portfolio - TEKS Services{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">Portfolio</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'print_shop:home' %}">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Intro -->
+<section class="portfolio-intro py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-subtitle">Browse through our portfolio of print, mail, and marketing projects</p>
+                <p class="lead">At TEKS Services, we take pride in delivering high-quality print and marketing solutions for businesses of all sizes. Here's a showcase of some of our recent projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Filter -->
+<section class="portfolio-filter py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="portfolio-filter-buttons mb-4">
+                    <button class="btn btn-outline-primary active me-2 mb-2" data-filter="*">All</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter=".print">Print</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter=".direct-mail">Direct Mail</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter=".signage">Signage</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter=".marketing">Marketing</button>
+                    <button class="btn btn-outline-primary mb-2" data-filter=".branding">Branding</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid -->
+<section class="portfolio-grid py-5">
+    <div class="container">
+        <div class="row portfolio-items">
+            <!-- Print Projects -->
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item print">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Brochure Design">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Corporate Brochure Design</h3>
+                        <p class="card-text">Tri-fold brochure design and printing for a local financial services company.</p>
+                        <span class="badge bg-primary me-1">Print</span>
+                        <span class="badge bg-secondary">Design</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item print marketing">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Business Cards">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Premium Business Cards</h3>
+                        <p class="card-text">Custom designed business cards with spot UV coating for a law firm.</p>
+                        <span class="badge bg-primary me-1">Print</span>
+                        <span class="badge bg-info">Marketing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Direct Mail Projects -->
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item direct-mail marketing">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1566125882500-87e10f726cdc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Direct Mail Campaign">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Real Estate Direct Mail Campaign</h3>
+                        <p class="card-text">Targeted postcard campaign for a real estate agency targeting new homebuyers.</p>
+                        <span class="badge bg-primary me-1">Direct Mail</span>
+                        <span class="badge bg-info">Marketing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item direct-mail">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Newsletter">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Monthly Newsletter</h3>
+                        <p class="card-text">Design, printing, and mailing of a monthly newsletter for a non-profit organization.</p>
+                        <span class="badge bg-primary me-1">Direct Mail</span>
+                        <span class="badge bg-secondary">Design</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signage Projects -->
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item signage">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Banner">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Event Banner</h3>
+                        <p class="card-text">Large format banner design and printing for a community event.</p>
+                        <span class="badge bg-primary me-1">Signage</span>
+                        <span class="badge bg-secondary">Design</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item signage marketing">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Storefront Sign">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Retail Storefront Signage</h3>
+                        <p class="card-text">Custom designed and printed window graphics for a retail store.</p>
+                        <span class="badge bg-primary me-1">Signage</span>
+                        <span class="badge bg-info">Marketing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Marketing Projects -->
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item marketing branding">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Brand Package">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Complete Brand Package</h3>
+                        <p class="card-text">Comprehensive branding package including logo, business cards, letterhead, and envelopes.</p>
+                        <span class="badge bg-primary me-1">Marketing</span>
+                        <span class="badge bg-warning text-dark">Branding</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item marketing">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1544239934-7b447d859f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Product Catalog">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Product Catalog</h3>
+                        <p class="card-text">Design and printing of a 32-page product catalog for a manufacturing company.</p>
+                        <span class="badge bg-primary me-1">Marketing</span>
+                        <span class="badge bg-secondary">Design</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Branding Projects -->
+            <div class="col-md-6 col-lg-4 mb-4 portfolio-item branding">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Logo Design">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Logo Design</h3>
+                        <p class="card-text">Custom logo design and brand identity development for a startup tech company.</p>
+                        <span class="badge bg-primary me-1">Design</span>
+                        <span class="badge bg-warning text-dark">Branding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Testimonials -->
+<section class="testimonials-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title">Client Testimonials</h2>
+                <p class="section-subtitle">What our clients say about our work</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 testimonial-card">
+                    <div class="card-body">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="card-text">"TEKS Services designed and printed our company brochures, and we couldn't be happier with the results. The quality is exceptional, and they delivered on time as promised."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-placeholder rounded-circle me-3 bg-secondary d-flex align-items-center justify-content-center">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Robert Johnson</h5>
+                                <small class="text-muted">Marketing Director, ABC Financial</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 testimonial-card">
+                    <div class="card-body">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="card-text">"Our direct mail campaign with TEKS Services exceeded our expectations. The response rate was significantly higher than our previous campaigns, and the team was a pleasure to work with."</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-placeholder rounded-circle me-3 bg-secondary d-flex align-items-center justify-content-center">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Jennifer Williams</h5>
+                                <small class="text-muted">Owner, Williams Real Estate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 testimonial-card">
+                    <div class="card-body">
+                        <div class="testimonial-quote mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary"></i>
+                        </div>
+                        <p class="card-text">"The signage TEKS Services created for our store has made a significant impact on our foot traffic. The design is eye-catching, and the quality is outstanding. Highly recommended!"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="testimonial-placeholder rounded-circle me-3 bg-secondary d-flex align-items-center justify-content-center">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Michael Brown</h5>
+                                <small class="text-muted">Owner, Downtown Boutique</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="mb-2">Ready to start your project?</h2>
+                <p class="lead mb-0">Contact us today for a free quote and consultation.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{% url 'print_shop:contact' %}" class="btn btn-light btn-lg">Get a Free Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Simple portfolio filtering
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.portfolio-filter-buttons button');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Show/hide items based on filter
+                portfolioItems.forEach(item => {
+                    if (filterValue === '*') {
+                        item.style.display = 'block';
+                    } else if (item.classList.contains(filterValue.substring(1))) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}

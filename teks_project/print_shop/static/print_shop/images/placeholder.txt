@@ -1,0 +1,20 @@
+The following placeholder images would be needed for the website:
+
+1. printing-services.jpg - For the printing services section
+2. mailing-services.jpg - For the mailing services section
+3. marketing-services.jpg - For the marketing services section
+4. variable-data.jpg - For the variable data section
+5. tabbing-rules.jpg - For the tabbing rules section
+
+Portfolio images:
+1. brochure-design.jpg
+2. business-cards.jpg
+3. direct-mail-campaign.jpg
+4. newsletter.jpg
+5. banner.jpg
+6. storefront-sign.jpg
+7. brand-package.jpg
+8. product-catalog.jpg
+9. logo-design.jpg
+
+These images would typically be added by the client or created by a designer.
